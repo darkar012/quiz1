@@ -9,7 +9,7 @@ public class Control {
 	
 	public Control (PApplet app) {
 		this.app=app;
-		logic= new Logic(this.app);
+		logic= new Logic(app);
 	}
 	public void drawCircle() {
 		logic.drawCircle();
@@ -17,14 +17,16 @@ public class Control {
 	public void drawSquare() {
 		logic.drawSquare();
 	}
+
 	public void randomPaint() {
 		logic.randomPaint();
 	}
 	public void randomSetup() {
 		logic.randomSetup();
 	}
+	/*
 	public void readtext(){
 		logic.readText();
-	}
+	}*/
 
 }

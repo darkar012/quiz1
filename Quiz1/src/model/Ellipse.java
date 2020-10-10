@@ -9,8 +9,7 @@ public class Ellipse extends Figure{
 	}
 
 	protected void paintFigure() {
-	app.fill (getR(),getG(),getB());
-	app.ellipse(getPosX(), getPosY(), getSizeX(), getSizeY());
+	app.ellipse(posX, posY, sizeX, sizeY);
 	}
 
 }

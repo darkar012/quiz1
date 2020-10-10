@@ -4,16 +4,16 @@ import processing.core.PApplet;
 
 public abstract class Figure extends PApplet {
 
-	private int posX;
-	private int posY;
-	private int sizeX;
-	private int sizeY;
-	private int speed;
-	private int dirY;
-	private int dirX;
-	private int r;
-	private int g;
-	private int b;
+	protected int posX;
+	protected int posY;
+	protected int sizeX;
+	protected int sizeY;
+	protected int speed;
+	protected int dirY;
+	protected int dirX;
+	protected int r;
+	protected int g;
+	protected int b;
 	PApplet app;
 	
 		public Figure (int posX, int posY, int sizeX, int sizeY, int r, int g, int b, PApplet app) {
@@ -31,13 +31,14 @@ public abstract class Figure extends PApplet {
 		}
 		
 	protected abstract void paintFigure();
+	
 	protected void moveAlt(){
 		this.posX = this.posX + this.dirX*this.speed;
-		if (this.posX >= 580 || this.posX <= 0) {
+		if (this.posX >= 500 || this.posX <= 0) {
 			this.dirX = this.dirX*(-1);
 		}
 		this.posY = this.posY + this.dirY*this.speed;
-		if (this.posY >= 580 || this.posY <= 0) {
+		if (this.posY >= 500 || this.posY <= 0) {
 			this.dirY = this.dirY*(-1);
 		}
 	}

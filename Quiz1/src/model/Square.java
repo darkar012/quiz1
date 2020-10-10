@@ -9,7 +9,7 @@ public class Square extends Figure{
 	}
 
 	protected void paintFigure() {
-		app.fill (getR(),getG(),getB());
+		app.fill(getR(),getG(),getB());
 		app.rect(getPosX(), getPosY(), getSizeX(), getSizeY());
 	}	
 }

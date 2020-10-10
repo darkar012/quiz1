@@ -18,15 +18,16 @@ public class ScreenFigures {
 	public void drawSquare() {
 		control.drawSquare();
 	}
+	
 	public void randomPaint() {
 		control.randomPaint();
 	}
 	public void randomSetup() {
 		control.randomSetup();
 	}
+	/*
 	public void readText() {
 		control.readtext();
-	}
-	
+	}*/
 
 }
