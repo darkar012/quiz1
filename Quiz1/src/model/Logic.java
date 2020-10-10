@@ -9,21 +9,33 @@ public class Logic extends PApplet{
 	PApplet app;
 	Figure ellipse;
 	Figure square;
-	ArrayList<String> words;
+	String [] figureWords;
+	ArrayList<String> word;
 	ArrayList<Figure> figure;
 	
 	public Logic (PApplet app) {
 		this.app=app;
 		ellipse= new Ellipse(50,50, 50, 50, 0, 255, 0, app);
 		figure = new ArrayList<Figure>();
+		word=new ArrayList<String>();
+		figureWords = app.loadStrings("../resources/figurePainting.txt");
+		for (int i = 0; i < figureWords.length; i++) {
+            String [] tempArray = figureWords[i].split("\r\n|\n|\r");
+            for (int j = 0; j < tempArray.length; j++) {
+                word.add(tempArray[j]);
+            }
+        }
+        for (String element : word) {
+            System.out.println(element);
+        }
 	}
-	public void drawCircle() {
+	public void drawFigure() {
+		 
+	}
+	
+	/*public void drawSquare() {
 		ellipse.paintFigure();
-		ellipse.moveAlt();
-	}
-	public void drawSquare() {
-		ellipse.paintFigure();
-	}
+	}*/
 	public void randomPaint() {
 		for (int i = 0; i < figure.size(); i++) {
 			figure.get(i).paintFigure();
@@ -51,10 +63,5 @@ public class Logic extends PApplet{
 		break;
 		}
 	}	
-	
-	public void readText () {
-			
-			System.out.println(words);
-		}
-	}
+}
 

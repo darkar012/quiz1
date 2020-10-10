@@ -22,6 +22,7 @@ public class Main extends PApplet{
 	public void draw() {
 		background (0);
 		sf.randomPaint();
+		sf.drawFigure();
 	}
 	public void mouseClicked() {
 		sf.randomSetup();

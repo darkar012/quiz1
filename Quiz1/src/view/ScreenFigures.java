@@ -11,12 +11,8 @@ public class ScreenFigures {
 		this.app=app;
 		control = new Control(app);
 	}
-	
-	public void drawCircle() {
-		control.drawCircle();
-	}
-	public void drawSquare() {
-		control.drawSquare();
+	public void drawFigure() {
+		control.drawFigure();
 	}
 	
 	public void randomPaint() {

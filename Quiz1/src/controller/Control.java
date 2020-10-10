@@ -11,11 +11,8 @@ public class Control {
 		this.app=app;
 		logic= new Logic(app);
 	}
-	public void drawCircle() {
-		logic.drawCircle();
-	}
-	public void drawSquare() {
-		logic.drawSquare();
+	public void drawFigure() {
+		logic.drawFigure();
 	}
 
 	public void randomPaint() {

@@ -33,13 +33,13 @@ public abstract class Figure extends PApplet {
 	protected abstract void paintFigure();
 	
 	protected void moveAlt(){
-		this.posX = this.posX + this.dirX*this.speed;
-		if (this.posX >= 500 || this.posX <= 0) {
-			this.dirX = this.dirX*(-1);
-		}
 		this.posY = this.posY + this.dirY*this.speed;
-		if (this.posY >= 500 || this.posY <= 0) {
+		if (this.posY >= 600 || this.posY <= 0) {
 			this.dirY = this.dirY*(-1);
+		}else if (this.posY == 500) {
+			posY = 0;
+		}else if (this.posY == 0) {
+			posY = 500;
 		}
 	}
 	

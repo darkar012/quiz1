@@ -1,4 +1,4 @@
-figura tam posX posY dirección
+figura tam posX posY direccion
 Cuadrado 50 400 30 -1
 Circulo 30 300 40 1
 Cuadrado 20 350 50 1
