@@ -4,27 +4,118 @@ import processing.core.PApplet;
 
 public abstract class Figure extends PApplet {
 
-	private int x;
-	private int y;
+	private int posX;
+	private int posY;
+	private int sizeX;
+	private int sizeY;
+	private int speed;
+	private int dirY;
+	private int dirX;
+	private int r;
+	private int g;
+	private int b;
 	PApplet app;
 	
-		public Figure (int x, int y, PApplet app) {
-			this.x=x;
-			this.y=y;
+		public Figure (int posX, int posY, int sizeX, int sizeY, int r, int g, int b, PApplet app) {
+			this.sizeX=sizeX;
+			this.sizeY=sizeY;
 			this.app=app;
+			this.posX=posX;
+			this.posY=posY;
+			this.r=r;
+			this.g=g;
+			this.b=b;
+			this.speed = 5;
+			this.dirY=1;
+			this.dirX=1;
 		}
+		
 	protected abstract void paintFigure();
-	public int getX() {
-		return x;
+	protected void moveAlt(){
+		this.posX = this.posX + this.dirX*this.speed;
+		if (this.posX >= 580 || this.posX <= 0) {
+			this.dirX = this.dirX*(-1);
+		}
+		this.posY = this.posY + this.dirY*this.speed;
+		if (this.posY >= 580 || this.posY <= 0) {
+			this.dirY = this.dirY*(-1);
+		}
 	}
-	public void setX(int x) {
-		this.x = x;
+	
+	public int getPosX() {
+		return posX;
 	}
-	public int getY() {
-		return y;
+	public void setPosX(int posX) {
+		this.posX = posX;
 	}
-	public void setY(int y) {
-		this.y = y;
+	public int getPosY() {
+		return posY;
 	}
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
+	public int getDirY() {
+		return dirY;
+	}
+	public void setDirY(int dirY) {
+		this.dirY = dirY;
+	}
+
+	public int getSizeX() {
+		return sizeX;
+	}
+
+	public void setSizeX(int sizeX) {
+		this.sizeX = sizeX;
+	}
+
+	public int getSizeY() {
+		return sizeY;
+	}
+
+	public void setSizeY(int sizeY) {
+		this.sizeY = sizeY;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	public int getDirX() {
+		return dirX;
+	}
+
+	public void setDirX(int dirX) {
+		this.dirX = dirX;
+	}
+
+	public int getR() {
+		return r;
+	}
+
+	public void setR(int r) {
+		this.r = r;
+	}
+
+	public int getG() {
+		return g;
+	}
+
+	public void setG(int g) {
+		this.g = g;
+	}
+
+	public int getB() {
+		return b;
+	}
+
+	public void setB(int b) {
+		this.b = b;
+	}
+	
 	
 }

@@ -1,5 +1,7 @@
 package view;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 public class Main extends PApplet{
@@ -11,18 +13,48 @@ public class Main extends PApplet{
 	
 	PApplet app;
 	ScreenFigures sf;
-	
+	String[] figureWords;
+	ArrayList<String> words;
+
 
 	public void settings () {
 		size(500,500);
+		
+		sf= new ScreenFigures(app);
 	}
 	public void setup() {
-		sf=new ScreenFigures(this);
+		/*figureWords = loadStrings("../resources/figurePainting.txt");
+		sf.readText();
+		/*words = new ArrayList<String>();
+		for (int i = 0; i < figureWords.length; i++) {
+			String [] tempArray = figureWords[i].split(" ");
+			for (int j = 0; j < tempArray.length; j++) {
+				words.add(tempArray[j]);
+			}
+	}*/
+	}
+	
+	
+	public String[] getFigureWords() {
+		return figureWords;
+	}
+	public void setFigureWords(String[] figureWords) {
+		this.figureWords = figureWords;
 	}
 	public void draw() {
 		background (0);
-		sf.drawCircle();
+		sf.randomPaint();
+		/*for (int i = 0; i < words.size(); i++) {
+			
+			if (words.get(i).equals("Cuadrado") && words.get(i).equals("50") && words.get(i).equals("400") && words.get(i).equals("30") &&  words.get(i).equals("-1")) {
+				
+				sf.drawCircle();
+			}*/
 	}
+	public void mouseClicked() {
+		sf.randomSetup();
+	}
+
 
 }
 
